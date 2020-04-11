@@ -7,7 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.repository.Query;
 
 @Document
 @Setter
@@ -18,6 +20,7 @@ public class Pet implements IDTO {
 
   @Id
   private String id;
+  @Indexed
   private Integer ownerId;
   private String name;
   private String breed;

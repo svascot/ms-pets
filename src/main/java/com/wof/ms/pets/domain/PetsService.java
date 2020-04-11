@@ -39,6 +39,6 @@ public class PetsService implements IPetsService {
 
   @Override
   public List<Pet> getByOwnerId(Integer id){
-    return repository.findAll().stream().filter(pet -> pet.getOwnerId().equals(id)).collect(Collectors.toList());
+    return repository.findByOwnerId(id);
   }
 }
